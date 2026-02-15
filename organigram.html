@@ -199,7 +199,7 @@
       </div>
     </div>
     <div class="legend-summary">
-      <span>6</span> Human &middot; <span>16</span> Hybrid &middot; <span>8</span> AI &middot; <span>30</span> Total
+      <span>6</span> Human &middot; <span>16</span> Hybrid &middot; <span>9</span> AI &middot; <span>31</span> Total
     </div>
   </div>
 
@@ -241,7 +241,7 @@
     }
     setChartHeight();
 
-    // ── Org Data (30 roles) ──
+    // ── Org Data (31 roles) ──
     const data = [
       {
         id: "ceo",
@@ -429,6 +429,17 @@
         level: "mid",
         linkedAgents: 2,
         agentList: "business-analyst, marketing-attribution-analyst"
+      },
+      {
+        id: "market-intelligence-analyst",
+        parentId: "product-manager",
+        title: "Market Intelligence Analyst",
+        shortTitle: "MIA",
+        department: "Product",
+        classification: "ai",
+        level: "mid",
+        linkedAgents: 1,
+        agentList: "market-intelligence-analyst"
       },
       {
         id: "ux-ui-designer",

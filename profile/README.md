@@ -4,7 +4,7 @@
 
 <h3 align="center">Where Data Converges</h3>
 
-<p>
+<p align="center">
 NexFolia is a financial data infrastructure company that helps fund administrators and asset managers modernize their ETL pipelines. Our platform, adAPPter, connects disparate data sources — from Bloomberg to internal systems — into a unified, auditable data flow. We blend deep IT expertise with financial domain knowledge to deliver solutions that institutional clients can trust.
 </p>
 
@@ -12,7 +12,7 @@ NexFolia is a financial data infrastructure company that helps fund administrato
 
 ## Organizational Structure
 
-NexFolia operates as an **AI-native organization** — a 25-role structure where humans, hybrid human+AI roles, and autonomous AI agents work together under clear accountability frameworks.
+NexFolia operates as an **AI-native organization** — a 31-role structure where humans, hybrid human+AI roles, and autonomous AI agents work together under clear accountability frameworks.
 
 > **[Open interactive org chart](https://nexfolia.github.io/.github/organigram.html)** — zoomable, expandable D3 visualization with agent details
 
@@ -31,7 +31,7 @@ flowchart TD
     CEO --> CFO
 
     PM["Product Mgr<br/><small>Hybrid</small>"]:::hybrid
-    HOD["Head of Design<br/><small>Human</small>"]:::human
+    HOD["Head of Design<br/><small>AI</small>"]:::ai
     GC["Gen. Counsel<br/><small>Human</small>"]:::human
     MD["Mkt. Director<br/><small>Human</small>"]:::human
     SD["Sales Director<br/><small>Human</small>"]:::human
@@ -44,7 +44,16 @@ flowchart TD
     CEO --> OM
 
     VPE["VP Eng<br/><small>Human</small>"]:::human
+    HAIE["Head of AI Eng<br/><small>Human</small>"]:::human
     CTO --> VPE
+    CTO --> HAIE
+
+    MCPA["MCP Architect<br/><small>Hybrid</small>"]:::hybrid
+    AOE["Agent Orch Eng<br/><small>Hybrid</small>"]:::hybrid
+    CE["Context Eng<br/><small>AI</small>"]:::ai
+    HAIE --> MCPA
+    HAIE --> AOE
+    HAIE --> CE
 
     SFE["Sr. Fullstack<br/><small>Hybrid</small>"]:::hybrid
     BE["Backend Eng<br/><small>Hybrid</small>"]:::hybrid
@@ -58,7 +67,9 @@ flowchart TD
     VPE --> QA
 
     BA["Biz Analyst<br/><small>Hybrid</small>"]:::hybrid
+    MIA["Market Intel<br/><small>AI</small>"]:::ai
     PM --> BA
+    PM --> MIA
     DA["Data Analyst<br/><small>AI</small>"]:::ai
     BA --> DA
 
@@ -80,11 +91,13 @@ flowchart TD
 
     HRC["HR Coord.<br/><small>Hybrid</small>"]:::hybrid
     ITS["IT/Sec Admin<br/><small>Hybrid</small>"]:::hybrid
+    HACC["Human/AI Collab<br/><small>AI</small>"]:::ai
     OM --> HRC
     OM --> ITS
+    OM --> HACC
 ```
 
-**Legend:** Human (6) · Hybrid (14) · AI (5) · **25 roles total**
+**Legend:** Human (6) · Hybrid (16) · AI (9) · **31 roles total**
 
 ---
 
