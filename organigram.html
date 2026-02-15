@@ -199,7 +199,7 @@
       </div>
     </div>
     <div class="legend-summary">
-      <span>6</span> Human &middot; <span>14</span> Hybrid &middot; <span>5</span> AI &middot; <span>25</span> Total
+      <span>6</span> Human &middot; <span>16</span> Hybrid &middot; <span>8</span> AI &middot; <span>30</span> Total
     </div>
   </div>
 
@@ -241,7 +241,7 @@
     }
     setChartHeight();
 
-    // ── Org Data (25 roles) ──
+    // ── Org Data (30 roles) ──
     const data = [
       {
         id: "ceo",
@@ -293,10 +293,10 @@
         title: "Head of Design",
         shortTitle: "Head of Design",
         department: "Design",
-        classification: "human",
+        classification: "ai",
         level: "director",
-        linkedAgents: 0,
-        agentList: ""
+        linkedAgents: 2,
+        agentList: "premium-ui-ux-architect, design-system-auditor"
       },
       {
         id: "general-counsel",
@@ -517,6 +517,61 @@
         level: "senior",
         linkedAgents: 2,
         agentList: "mcp-expert, risk-manager"
+      },
+      {
+        id: "head-of-ai-engineering",
+        parentId: "cto",
+        title: "Head of AI Engineering",
+        shortTitle: "Head of AI Eng",
+        department: "AI",
+        classification: "human",
+        level: "director",
+        linkedAgents: 0,
+        agentList: ""
+      },
+      {
+        id: "mcp-architect",
+        parentId: "head-of-ai-engineering",
+        title: "MCP Architect",
+        shortTitle: "MCP Architect",
+        department: "AI",
+        classification: "hybrid",
+        level: "senior",
+        linkedAgents: 1,
+        agentList: "mcp-designer"
+      },
+      {
+        id: "agent-orchestration-engineer",
+        parentId: "head-of-ai-engineering",
+        title: "Agent Orchestration Engineer",
+        shortTitle: "Agent Orch Eng",
+        department: "AI",
+        classification: "hybrid",
+        level: "senior",
+        linkedAgents: 1,
+        agentList: "agent-orchestrator"
+      },
+      {
+        id: "context-engineer",
+        parentId: "head-of-ai-engineering",
+        title: "Context Engineer",
+        shortTitle: "Context Eng",
+        department: "AI",
+        classification: "ai",
+        level: "mid",
+        linkedAgents: 2,
+        agentList: "context-engineer, prompt-optimizer"
+      },
+      {
+        id: "human-ai-collaboration-coordinator",
+        parentId: "operations-manager",
+        title: "Human/AI Collab Coordinator",
+        shortTitle: "Human/AI Collab",
+        department: "Operations",
+        classification: "ai",
+        level: "mid",
+        linkedAgents: 1,
+        agentList: "human-task-coordinator"
       }
     ];
 
