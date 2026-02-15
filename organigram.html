@@ -197,9 +197,13 @@
         <div class="legend-swatch" style="background: #00B894;"></div>
         AI
       </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: #1E1B4B;"></div>
+        Holding
+      </div>
     </div>
     <div class="legend-summary">
-      <span>6</span> Human &middot; <span>16</span> Hybrid &middot; <span>9</span> AI &middot; <span>31</span> Total
+      <span>2</span> Human &middot; <span>10</span> Hybrid &middot; <span>6</span> AI &middot; <span>4</span> Holding &middot; <span>22</span> Total
     </div>
   </div>
 
@@ -219,7 +223,7 @@
 
   <!-- Footer -->
   <div id="footer">
-    Part of the <strong>NexFolia</strong> organization &middot; AI-native organizational structure
+    Part of <strong>NexFolia</strong>, a <strong>jeannAI</strong> company &middot; AI-native organizational structure
   </div>
 
   <!-- Tooltip -->
@@ -241,19 +245,54 @@
     }
     setChartHeight();
 
-    // ── Org Data (31 roles) ──
+    // ── Org Data (22 nodes: 18 NexFolia + 4 holding context) ──
     const data = [
+      // ── Holding context nodes (jeannAI) ──
       {
         id: "ceo",
         parentId: "",
         title: "Chief Executive Officer",
         shortTitle: "CEO",
-        department: "C-Suite",
-        classification: "human",
+        department: "jeannAI",
+        classification: "holding",
         level: "c-suite",
         linkedAgents: 0,
         agentList: ""
       },
+      {
+        id: "general-counsel",
+        parentId: "ceo",
+        title: "General Counsel",
+        shortTitle: "GC",
+        department: "jeannAI",
+        classification: "holding",
+        level: "director",
+        linkedAgents: 0,
+        agentList: ""
+      },
+      {
+        id: "marketing-director",
+        parentId: "ceo",
+        title: "Marketing Director",
+        shortTitle: "Mkt. Director",
+        department: "jeannAI",
+        classification: "holding",
+        level: "director",
+        linkedAgents: 0,
+        agentList: ""
+      },
+      {
+        id: "head-of-design",
+        parentId: "ceo",
+        title: "Head of Design",
+        shortTitle: "Head of Design",
+        department: "jeannAI",
+        classification: "holding",
+        level: "director",
+        linkedAgents: 2,
+        agentList: "premium-ui-ux-architect, design-system-auditor"
+      },
+      // ── NexFolia roles ──
       {
         id: "cto",
         parentId: "ceo",
@@ -264,17 +303,6 @@
         level: "c-suite",
         linkedAgents: 3,
         agentList: "architect-review, code-reviewer, architecture-modernizer"
-      },
-      {
-        id: "cfo",
-        parentId: "ceo",
-        title: "Chief Financial Officer",
-        shortTitle: "CFO",
-        department: "C-Suite",
-        classification: "hybrid",
-        level: "c-suite",
-        linkedAgents: 2,
-        agentList: "business-analyst, risk-manager"
       },
       {
         id: "product-manager",
@@ -288,39 +316,6 @@
         agentList: "product-strategist, business-analyst"
       },
       {
-        id: "head-of-design",
-        parentId: "ceo",
-        title: "Head of Design",
-        shortTitle: "Head of Design",
-        department: "Design",
-        classification: "ai",
-        level: "director",
-        linkedAgents: 2,
-        agentList: "premium-ui-ux-architect, design-system-auditor"
-      },
-      {
-        id: "general-counsel",
-        parentId: "ceo",
-        title: "General Counsel",
-        shortTitle: "GC",
-        department: "Legal",
-        classification: "human",
-        level: "director",
-        linkedAgents: 0,
-        agentList: ""
-      },
-      {
-        id: "marketing-director",
-        parentId: "ceo",
-        title: "Marketing Director",
-        shortTitle: "Mkt. Director",
-        department: "Marketing & Sales",
-        classification: "human",
-        level: "director",
-        linkedAgents: 0,
-        agentList: ""
-      },
-      {
         id: "sales-director",
         parentId: "ceo",
         title: "Sales Director",
@@ -330,17 +325,6 @@
         level: "director",
         linkedAgents: 0,
         agentList: ""
-      },
-      {
-        id: "operations-manager",
-        parentId: "ceo",
-        title: "Operations Manager",
-        shortTitle: "Ops Manager",
-        department: "Operations",
-        classification: "hybrid",
-        level: "senior",
-        linkedAgents: 1,
-        agentList: "business-analyst"
       },
       {
         id: "vp-engineering",
@@ -506,97 +490,22 @@
         level: "junior",
         linkedAgents: 2,
         agentList: "sales-automator, customer-support"
-      },
-      {
-        id: "hr-coordinator",
-        parentId: "operations-manager",
-        title: "HR Coordinator",
-        shortTitle: "HR Coord.",
-        department: "Operations",
-        classification: "hybrid",
-        level: "mid",
-        linkedAgents: 2,
-        agentList: "technical-writer, customer-support"
-      },
-      {
-        id: "it-security-admin",
-        parentId: "operations-manager",
-        title: "IT/Security Administrator",
-        shortTitle: "IT/Sec Admin",
-        department: "Operations",
-        classification: "hybrid",
-        level: "senior",
-        linkedAgents: 2,
-        agentList: "mcp-expert, risk-manager"
-      },
-      {
-        id: "head-of-ai-engineering",
-        parentId: "cto",
-        title: "Head of AI Engineering",
-        shortTitle: "Head of AI Eng",
-        department: "AI",
-        classification: "human",
-        level: "director",
-        linkedAgents: 0,
-        agentList: ""
-      },
-      {
-        id: "mcp-architect",
-        parentId: "head-of-ai-engineering",
-        title: "MCP Architect",
-        shortTitle: "MCP Architect",
-        department: "AI",
-        classification: "hybrid",
-        level: "senior",
-        linkedAgents: 1,
-        agentList: "mcp-designer"
-      },
-      {
-        id: "agent-orchestration-engineer",
-        parentId: "head-of-ai-engineering",
-        title: "Agent Orchestration Engineer",
-        shortTitle: "Agent Orch Eng",
-        department: "AI",
-        classification: "hybrid",
-        level: "senior",
-        linkedAgents: 1,
-        agentList: "agent-orchestrator"
-      },
-      {
-        id: "context-engineer",
-        parentId: "head-of-ai-engineering",
-        title: "Context Engineer",
-        shortTitle: "Context Eng",
-        department: "AI",
-        classification: "ai",
-        level: "mid",
-        linkedAgents: 2,
-        agentList: "context-engineer, prompt-optimizer"
-      },
-      {
-        id: "human-ai-collaboration-coordinator",
-        parentId: "operations-manager",
-        title: "Human/AI Collab Coordinator",
-        shortTitle: "Human/AI Collab",
-        department: "Operations",
-        classification: "ai",
-        level: "mid",
-        linkedAgents: 1,
-        agentList: "human-task-coordinator"
       }
     ];
 
     // ── Color config ──
     const classColors = {
-      human:  "#2E8B57",
-      hybrid: "#0D5C63",
-      ai:     "#00B894"
+      human:   "#2E8B57",
+      hybrid:  "#0D5C63",
+      ai:      "#00B894",
+      holding: "#1E1B4B"
     };
 
     const classLabels = {
-      human:  "Human",
-      hybrid: "Hybrid",
-      ai:     "AI"
+      human:   "Human",
+      hybrid:  "Hybrid",
+      ai:      "AI",
+      holding: "jeannAI"
     };
 
     // ── State ──

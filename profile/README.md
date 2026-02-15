@@ -8,11 +8,13 @@
 NexFolia is a financial data infrastructure company that helps fund administrators and asset managers modernize their ETL pipelines. Our platform, adAPPter, connects disparate data sources — from Bloomberg to internal systems — into a unified, auditable data flow. We blend deep IT expertise with financial domain knowledge to deliver solutions that institutional clients can trust.
 </p>
 
+<p align="center"><em>A <strong>jeannAI</strong> company</em></p>
+
 ---
 
 ## Organizational Structure
 
-NexFolia operates as an **AI-native organization** — a 31-role structure where humans, hybrid human+AI roles, and autonomous AI agents work together under clear accountability frameworks.
+NexFolia operates as an **AI-native organization** — an 18-role NexFolia structure (22 nodes incl. holding context) where humans, hybrid human+AI roles, and autonomous AI agents work together under clear accountability frameworks.
 
 > **[Open interactive org chart](https://nexfolia.github.io/.github/organigram.html)** — zoomable, expandable D3 visualization with agent details
 
@@ -22,39 +24,28 @@ flowchart TD
     classDef human fill:#2E8B57,color:#fff,stroke:#0F172A
     classDef hybrid fill:#0D5C63,color:#fff,stroke:#0F172A
     classDef ai fill:#00B894,color:#fff,stroke:#0F172A
+    classDef holding fill:#1E1B4B,color:#fff,stroke:#0F172A
 
-    CEO["CEO<br/><small>Human</small>"]:::human
-
-    CTO["CTO<br/><small>Hybrid</small>"]:::hybrid
-    CFO["CFO<br/><small>Hybrid</small>"]:::hybrid
-    CEO --> CTO
-    CEO --> CFO
-
-    PM["Product Mgr<br/><small>Hybrid</small>"]:::hybrid
-    HOD["Head of Design<br/><small>AI</small>"]:::ai
-    GC["Gen. Counsel<br/><small>Human</small>"]:::human
-    MD["Mkt. Director<br/><small>Human</small>"]:::human
-    SD["Sales Director<br/><small>Human</small>"]:::human
-    OM["Ops Manager<br/><small>Hybrid</small>"]:::hybrid
-    CEO --> PM
-    CEO --> HOD
+    %% Holding context nodes (jeannAI)
+    CEO["CEO<br/><small>jeannAI</small>"]:::holding
+    GC["Gen. Counsel<br/><small>jeannAI</small>"]:::holding
+    MD["Mkt. Director<br/><small>jeannAI</small>"]:::holding
+    HOD["Head of Design<br/><small>jeannAI</small>"]:::holding
     CEO --> GC
     CEO --> MD
+    CEO --> HOD
+
+    %% NexFolia C-Suite & Directors
+    CTO["CTO<br/><small>Hybrid</small>"]:::hybrid
+    PM["Product Mgr<br/><small>Hybrid</small>"]:::hybrid
+    SD["Sales Director<br/><small>Human</small>"]:::human
+    CEO --> CTO
+    CEO --> PM
     CEO --> SD
-    CEO --> OM
 
+    %% Engineering
     VPE["VP Eng<br/><small>Human</small>"]:::human
-    HAIE["Head of AI Eng<br/><small>Human</small>"]:::human
     CTO --> VPE
-    CTO --> HAIE
-
-    MCPA["MCP Architect<br/><small>Hybrid</small>"]:::hybrid
-    AOE["Agent Orch Eng<br/><small>Hybrid</small>"]:::hybrid
-    CE["Context Eng<br/><small>AI</small>"]:::ai
-    HAIE --> MCPA
-    HAIE --> AOE
-    HAIE --> CE
-
     SFE["Sr. Fullstack<br/><small>Hybrid</small>"]:::hybrid
     BE["Backend Eng<br/><small>Hybrid</small>"]:::hybrid
     FE["Frontend Eng<br/><small>Hybrid</small>"]:::hybrid
@@ -66,6 +57,7 @@ flowchart TD
     VPE --> DOE
     VPE --> QA
 
+    %% Product
     BA["Biz Analyst<br/><small>Hybrid</small>"]:::hybrid
     MIA["Market Intel<br/><small>AI</small>"]:::ai
     PM --> BA
@@ -73,14 +65,17 @@ flowchart TD
     DA["Data Analyst<br/><small>AI</small>"]:::ai
     BA --> DA
 
+    %% Design
     UXD["UX/UI<br/><small>Hybrid</small>"]:::hybrid
     HOD --> UXD
 
+    %% Legal
     SP["Sr. Paralegal<br/><small>Hybrid</small>"]:::hybrid
     CA["Compliance<br/><small>AI</small>"]:::ai
     GC --> SP
     GC --> CA
 
+    %% Marketing & Sales
     CW["Content<br/><small>Hybrid</small>"]:::hybrid
     SEO["SEO<br/><small>AI</small>"]:::ai
     MD --> CW
@@ -88,16 +83,9 @@ flowchart TD
 
     SDR["SDR<br/><small>AI</small>"]:::ai
     SD --> SDR
-
-    HRC["HR Coord.<br/><small>Hybrid</small>"]:::hybrid
-    ITS["IT/Sec Admin<br/><small>Hybrid</small>"]:::hybrid
-    HACC["Human/AI Collab<br/><small>AI</small>"]:::ai
-    OM --> HRC
-    OM --> ITS
-    OM --> HACC
 ```
 
-**Legend:** Human (6) · Hybrid (16) · AI (9) · **31 roles total**
+**Legend:** Human (2) · Hybrid (10) · AI (6) · Holding (4) · **22 nodes**
 
 ---
 
